@@ -1,0 +1,99 @@
+<header>
+  
+    <!--mdb-sidenav #sidenav class="sn-bg-1" [fixed]="false">
+  
+        <logo>
+            <li>
+                <div class="logo-wrapper waves-light" style="height: 130px;">
+                    <a href="#">
+                        <img src="https://www.moneymetals.com/img/slider/mmx-precious-metals.png" class="img-fluid flex-center">
+                    </a>
+                </div>
+            </li>
+        </logo>
+  
+        <links>
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <mdb-squeezebox [multiple]="false" aria-multiselectable="true">
+                        <mdb-item>
+                            <mdb-item-head mdbWavesEffect>
+                                <i class="fa fa-globe"></i> Countries
+                            </mdb-item-head>
+                            <mdb-item-body>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="waves-effect" mdbWavesEffect><i class="fa fa-plus"></i> Add country</a>
+                                    </li>    
+                                </ul>
+                            </mdb-item-body>
+                        </mdb-item>
+  
+                        <mdb-item>
+                            <mdb-item-head mdbWavesEffect>
+                                <i class="fa fa-server"></i> Periods
+                            </mdb-item-head>
+                            <mdb-item-body>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="waves-effect" mdbWavesEffect><i class="fa fa-plus"></i> Add period</a>
+                                    </li>
+                                </ul>
+                            </mdb-item-body>
+                        </mdb-item>
+
+                        <mdb-item>
+                            <mdb-item-head mdbWavesEffect>
+                                <i class="fa fa-gg"></i> Values
+                            </mdb-item-head>
+                            <mdb-item-body>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="waves-effect" mdbWavesEffect><i class="fa fa-plus"></i> Add value</a>
+                                    </li>
+                                </ul>
+                            </mdb-item-body>
+                        </mdb-item>
+
+                    </mdb-squeezebox>
+                </ul>
+            </li>
+        </links>
+        <div class="sidenav-bg mask-strong"></div>
+    </mdb-sidenav-->
+  
+    <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav" height="45px" [containerInside]="false">
+        <logo>
+            <div class="logo-wrapper waves-light">
+                <img src="assets/header/logo.png" height="45px" >
+            </div>
+            <a class="navbar-brand">
+                <span class="h5">Rarity&amp;Collection</span> 
+            </a>
+        </logo>
+
+        <navlinks>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ie-hidden-double-nav">
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect>
+                        <i class="fa fa-user"></i>
+                        <span class="clearfix d-none d-sm-inline-block">oleksandr.fedoras@gmail.com</span>
+                    </a>
+                </li>
+            </ul>
+        </navlinks>
+    </mdb-navbar>
+  </header>
+
+  <div class="fixed-action-btn" style="bottom: 55px; right: 24px;">
+        <a class="btn-floating btn-lg aqua-gradient waves-light" mdbWavesEffect (click)="fixed.toggle($event)">
+            <i class="fa fa-gears"></i>
+        </a>
+
+        <div class="fixed_collapse" [mdbCollapse]="isCollapsed" #fixed="bs-collapse">
+            <a class="btn-floating blue waves-light" (click)="fixed.toggle($event)" mdbWavesEffect><i class="fa fa-globe"></i></a>
+            <a class="btn-floating btn-blue-grey waves-light disabled" mdbWavesEffect><i class="fa fa-server"></i></a>
+            <a class="btn-floating btn-blue-grey waves-light disabled" mdbWavesEffect><i class="fa fa-gg"></i></a>
+        </div>
+
+  </div>

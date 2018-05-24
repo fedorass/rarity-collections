@@ -1,0 +1,95 @@
+<div class="row pt-4">
+    
+  <div class="col-lg-10">
+    
+    <grid-navigation (onFilterChanged)="onFilterChanged($event)"></grid-navigation>
+
+    <section class="section pt-4">
+        <div class="row" *ngIf="coins.length !== 0">
+            <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let coin of coins">
+                <app-coin [coin]="coin"></app-coin>
+            </div>
+        </div>
+        <div class="row" *ngIf="coins.length == 0">
+            <div class="col text-center" style="margin-top: 150px">
+                 <img src="assets/content/silver-coin-montage.png" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+  </div>
+
+    <div class="col-lg-2">
+        <div class="row">
+            <div class="col-md-6 col-lg-12 mb-5">
+                <h5 class="font-weight-bold dark-grey-text"><strong>Order By</strong></h5>
+                <div class="divider"></div>
+
+                <p class="blue-text"><a>Default</a></p>
+                <p class="dark-grey-text"><a>By Issue Date</a></p>
+            </div>
+
+            <div class="col-md-6 col-lg-12 mb-5">
+                <h5 class="font-weight-bold dark-grey-text"><strong>Material</strong></h5>
+                <div class="divider"></div>
+
+                    <div class="form-group ">
+                        <input name="material" type="radio" id="all" checked>
+                        <label for="all" class="dark-grey-text">All</label>
+                    </div>
+
+                    <div class="form-group" *ngFor="let materialFilter of materialFilters">
+                        <input name="material" type="radio" [id]="materialFilter.code">
+                        <label [for]="materialFilter.code" class="dark-grey-text">{{ materialFilter.material }}</label>
+                    </div>
+
+                    
+                    <!--div class="form-group">
+                        <input name="material" type="radio" id="nickel-silver">
+                        <label for="nickel-silver" class="dark-grey-text">Nickel silver</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="material" type="radio" id="german-silver">
+                        <label for="german-silver" class="dark-grey-text">German silver</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="material" type="radio" id="silver-925">
+                        <label for="silver-925" class="dark-grey-text">Silver (Ag 925)</label>
+                    </div-->
+            </div>
+
+            <div class="col-md-6 col-lg-12 mb-5">
+                    <h5 class="font-weight-bold dark-grey-text"><strong>Denomination</strong></h5>
+                    <div class="divider"></div>
+    
+                        <div class="form-group ">
+                            <input name="denomination" type="radio" id="all" checked>
+                            <label for="all" class="dark-grey-text">All</label>
+                        </div>
+    
+                        <div class="form-group " *ngFor="let denominationFilter of denominationFilters">
+                            <input name="denomination" type="radio" [id]="denominationFilter.code">
+                            <label [for]="denominationFilter.code" class="dark-grey-text">{{ denominationFilter.denomination }}</label>
+                        </div>
+
+                        <!--div class="form-group">
+                            <input name="denomination" type="radio" id="200000" checked>
+                            <label for="200000" class="dark-grey-text">200000 карбованців</label>
+                        </div>
+    
+                        <div class="form-group">
+                            <input name="denomination" type="radio" id="1000000">
+                            <label for="1000000" class="dark-grey-text">1000000 карбованців</label>
+                        </div>
+    
+                        <div class="form-group">
+                            <input name="denomination" type="radio" id="2000000">
+                            <label for="2000000" class="dark-grey-text">2000000 карбованців</label>
+                        </div-->
+                </div>
+
+        </div>
+    </div>
+</div>
