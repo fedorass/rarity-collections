@@ -1,19 +1,19 @@
 <div class="view overlay waves-light" mdbWavesEffect>
     <div class="m-3">
-        <img [src]="coin.obverse" style='float: left' width="50%" alt="coin">
-        <img [src]="coin.reverse" style='float: right' width="50%" alt="coin">
+        <img [src]="buildImageUrl(coin.obverse)" style='float: left' width="50%" alt="coin">
+        <img [src]="buildImageUrl(coin.reverse)" style='float: right' width="50%" alt="coin">
     </div>
     <a><div class="mask rgba-white-slight"></div></a>
 </div> 
 <div class="card-body pt-1">
-    <h5 class="card-title">200000 карбованців</h5>
+    <h5 class="card-title">{{ coin.denomination }}</h5>
     <hr>
     <dl class="row">
         <dt class="col-sm-6">Material</dt>
         <dd class="col-sm-6">{{ coin.metal }}</dd>
       
         <dt class="col-sm-6">Issue Date</dt>
-        <dd class="col-sm-6">{{ coin.date }}</dd>                          
+        <dd class="col-sm-6">{{ coin.issueDate | date: 'dd/MM/yyyy'}}</dd>                          
     </dl>
 </div>
 <div class="mdb-color lighten-3 text-center">
