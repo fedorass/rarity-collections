@@ -21,7 +21,7 @@ export class NavigationComponent implements OnInit {
   selectedCountry: any;
   selectedMonetaryPeriod: any;
 
-  @Output() onFilterChanged = new EventEmitter<any>();
+  @Output() onNavChanged = new EventEmitter<any>();
 
   constructor(private countryService: CountryService, private monetaryPeriodService: MonetaryPeriodService) { 
 
@@ -46,7 +46,7 @@ export class NavigationComponent implements OnInit {
     this.selectedCountry = country;
     this.monetaryPeriods = [];
 
-    this.onFilterChanged.emit({
+    this.onNavChanged.emit({
       materialFilters: [],
       denominationFilters: [],
     });
@@ -82,9 +82,21 @@ export class NavigationComponent implements OnInit {
       materials = materials.concat(this.selectedMonetaryPeriod.materials);
     }
 
-    this.onFilterChanged.emit({
-      materialFilters: materials,
-      denominationFilters: this.selectedMonetaryPeriod.denominations,
+    this.onNavChanged.emit({
+      materialFilters: materials.map(item => {
+
+        return {
+          code: item.code,
+          label: item.material
+        }
+      }),
+      denominationFilters: this.selectedMonetaryPeriod.denominations.map(item => {
+
+        return {
+          code: item.code,
+          label: item.denomination
+        }
+      }),
       monetaryPeriodId: this.selectedMonetaryPeriod.value
     });
   }

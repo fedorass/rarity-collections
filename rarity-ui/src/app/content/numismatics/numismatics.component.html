@@ -1,8 +1,8 @@
 <div class="col-lg-10">
 
-    <grid-navigation (onFilterChanged)="onFilterChanged($event)"></grid-navigation>
+    <grid-navigation (onNavChanged)="onNavChanged($event)"></grid-navigation>
 
-    <section class="section pt-4">
+    <section class="section pt-4 pb-2">
         <div class="row" *ngIf="coins.length !== 0">
             <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let coin of coins">
                 <app-coin [coin]="coin"></app-coin>
@@ -27,35 +27,9 @@
             <p class="dark-grey-text"><a>By Issue Date</a></p>
         </div>
 
-        <div class="col-md-6 col-lg-12 mb-5">
-            <h5 class="font-weight-bold dark-grey-text"><strong>Material</strong></h5>
-            <div class="divider"></div>
+        <grid-filter [label]="'Material'" [name]="'material'" [values]="materialFilters" [default]='refreshed' (onFilterChanged)="onMaterialChanged($event)"></grid-filter>
 
-                <div class="form-group ">
-                    <input name="material" type="radio" id="all" checked>
-                    <label for="all" class="dark-grey-text">All</label>
-                </div>
-
-                <div class="form-group" *ngFor="let materialFilter of materialFilters">
-                    <input name="material" type="radio" [id]="materialFilter.code">
-                    <label [for]="materialFilter.code" class="dark-grey-text">{{ materialFilter.material }}</label>
-                </div>
-        </div>
-
-        <div class="col-md-6 col-lg-12 mb-5">
-                <h5 class="font-weight-bold dark-grey-text"><strong>Denomination</strong></h5>
-                <div class="divider"></div>
-
-                    <div class="form-group ">
-                        <input name="denomination" type="radio" id="all" checked>
-                        <label for="all" class="dark-grey-text">All</label>
-                    </div>
-
-                    <div class="form-group " *ngFor="let denominationFilter of denominationFilters">
-                        <input name="denomination" type="radio" [id]="denominationFilter.code">
-                        <label [for]="denominationFilter.code" class="dark-grey-text">{{ denominationFilter.denomination }}</label>
-                    </div>
-            </div>
+        <grid-filter [label]="'Denomination'" [name]="'denomination'" [values]="denominationFilters" [default]='refreshed' (onFilterChanged)="onDenominationChanged($event)"></grid-filter>
 
     </div>
 </div>

@@ -20,6 +20,7 @@ import { CoinComponent } from './content/coin/coin.component';
 import { CountryService } from './content/country.service';
 import { MonetaryPeriodService } from './content/monetary-period.service';
 import { NumismaticsService } from './content/numismatics.service';
+import { FilterComponent } from './content/filter/filter.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NumismaticsService } from './content/numismatics.service';
     FooterComponent,
     NumismaticsComponent,
     NavigationComponent,
-    CoinComponent
+    CoinComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

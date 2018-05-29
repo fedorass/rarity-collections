@@ -12,9 +12,13 @@ export class NumismaticsService {
 
   }
 
-  findAll(monetaryPeriodId: string): Observable<any[]> {
+  findAll(monetaryPeriodId: string, query?: string): Observable<any[]> {
 
-    const queryUrl = `${this.baseUrl}/periods/${monetaryPeriodId}/coins`;
+    let queryUrl: string = `${this.baseUrl}/periods/${monetaryPeriodId}/coins`;
+
+    if (query) {
+      queryUrl = queryUrl.concat('?', query);
+    }
 
     return this.http.get(queryUrl).map((response: Response) => {
       return (<any>response.json()).map(item => {

@@ -1,5 +1,9 @@
 @import "./styles/e-commerce/_general.scss";
 
+html, body {
+  height: 100%;
+}
+
 .grow {
     flex: 1;
 }

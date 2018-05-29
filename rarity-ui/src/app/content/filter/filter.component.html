@@ -1,0 +1,13 @@
+<h5 class="font-weight-bold dark-grey-text"><strong>{{ label }}</strong></h5>
+
+<div class="divider"></div>
+
+<div class="form-group ">
+    <input [name]="name" type="radio" [id]="name + '_all'" [checked]="default" (change)="onFilterChange()">
+    <label [for]="name + '_all'" class="dark-grey-text">All</label>
+</div>
+
+<div class="form-group " *ngFor="let value of values">
+    <input [name]="name" type="radio" [id]="value.code" (change)="onFilterChange(value)">
+    <label [for]="value.code" class="dark-grey-text">{{ value.label }}</label>
+</div>
