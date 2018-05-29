@@ -1,7 +1,7 @@
 <div class="view overlay waves-light" mdbWavesEffect>
     <div class="m-3">
-        <img [src]="buildImageUrl(coin.obverse)" style='float: left' width="50%" alt="coin">
-        <img [src]="buildImageUrl(coin.reverse)" style='float: right' width="50%" alt="coin">
+        <img [src]="buildObverseImageUrl()" style='float: left' width="50%" alt="coin">
+        <img [src]="buildReverseImageUrl()" style='float: right' width="50%" alt="coin">
     </div>
     <a><div class="mask rgba-white-slight"></div></a>
 </div> 
@@ -22,7 +22,7 @@
             <a href="#" class="white-text"><i class="fa fa-edit fa-lg pr-1"></i></a>
         </li>
         <li class="list-inline-item pr-2">
-            <a href="#" class="white-text"><i class="fa fa-trash fa-lg pr-1"> </i></a>
+            <a href="#" class="white-text"><i class="fa fa-trash fa-lg pr-1"></i></a>
         </li>
     </ul>
 </div>
