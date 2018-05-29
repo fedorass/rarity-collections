@@ -5,7 +5,7 @@
     <section class="section pt-4 pb-2">
         <div class="row" *ngIf="coins.length !== 0">
             <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let coin of coins">
-                <app-coin [coin]="coin"></app-coin>
+                <app-coin [coin]="coin" [coutry]='countryId'></app-coin>
             </div>
         </div>
         <div class="row" *ngIf="coins.length == 0">
@@ -27,9 +27,9 @@
             <p class="dark-grey-text"><a>By Issue Date</a></p>
         </div>
 
-        <grid-filter [label]="'Material'" [name]="'material'" [values]="materialFilters" [default]='refreshed' (onFilterChanged)="onMaterialChanged($event)"></grid-filter>
+        <grid-filter [label]="'Material'" [name]="'material'" [values]="materialFilters" (onFilterChanged)="onMaterialChanged($event)"></grid-filter>
 
-        <grid-filter [label]="'Denomination'" [name]="'denomination'" [values]="denominationFilters" [default]='refreshed' (onFilterChanged)="onDenominationChanged($event)"></grid-filter>
+        <grid-filter [label]="'Denomination'" [name]="'denomination'" [values]="denominationFilters" (onFilterChanged)="onDenominationChanged($event)"></grid-filter>
 
     </div>
 </div>

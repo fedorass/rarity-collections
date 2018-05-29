@@ -14,10 +14,9 @@ export class NumismaticsComponent implements OnInit {
   materialFilters: Array<any> = [];
   denominationFilters: Array<any> = [];  
 
+  countryId: string;
   monetaryPeriodId: string;
 
-  refreshed: boolean = true;
-    
   coins: Array<any> = [];
 
   selectedDenomination: string;
@@ -29,10 +28,10 @@ export class NumismaticsComponent implements OnInit {
   }
 
   onNavChanged(filters: any): void {
-    this.refreshed = true;
 
     this.materialFilters = filters.materialFilters;
     this.denominationFilters = filters.denominationFilters;
+    this.countryId = filters.countryId;
 
     if (filters.monetaryPeriodId) {
       this.monetaryPeriodId = filters.monetaryPeriodId;
@@ -41,12 +40,14 @@ export class NumismaticsComponent implements OnInit {
                 this.coins = coins;
             })
     }
+    else {
+       this.coins = [];
+    }
 
   }
 
   onDenominationChanged(denomination?: string): void {
     
-    this.refreshed = false;
     this.selectedDenomination = denomination;
 
     this.triggerFilterRequest();
@@ -54,8 +55,7 @@ export class NumismaticsComponent implements OnInit {
   }
 
   onMaterialChanged(material?: string): void {
-    
-    this.refreshed = false;
+
     this.selectedMaterial = material;
 
     this.triggerFilterRequest();

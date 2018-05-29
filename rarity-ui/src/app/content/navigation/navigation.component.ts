@@ -45,10 +45,12 @@ export class NavigationComponent implements OnInit {
   countryChanged(country): void {
     this.selectedCountry = country;
     this.monetaryPeriods = [];
+    this.selectedMonetaryPeriod = null;
 
     this.onNavChanged.emit({
       materialFilters: [],
       denominationFilters: [],
+      countryId: this.selectedCountry.value,
     });
 
     this.monetaryPeriodService.findAll(country.value)
@@ -97,7 +99,8 @@ export class NavigationComponent implements OnInit {
           label: item.denomination
         }
       }),
-      monetaryPeriodId: this.selectedMonetaryPeriod.value
+      monetaryPeriodId: this.selectedMonetaryPeriod.value,
+      countryId: this.selectedCountry.value
     });
   }
 
