@@ -11,7 +11,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CoinComponent implements OnInit {
   
   @Input() coin: any;  
-  @Input() coutry: string;   
+  @Input() country: string;   
   
   private IMG_BASE_URL: string = 'https://bank.gov.ua/control/uk/currentmoney/image?';
   
@@ -21,11 +21,11 @@ export class CoinComponent implements OnInit {
   }
 
   buildObverseImageUrl(): string {
-    return `assets/images/numismatics/coutries/${this.coutry}/monetary-periods/${this.coin.periodId}/coins/${this.coin.coinId}/obverse.png`;
+    return `assets/images/numismatics/countries/${this.country}/monetary-periods/${this.coin.periodId}/coins/${this.coin.coinId}/obverse.png`;
   }
 
   buildReverseImageUrl(): string {
-    return `assets/images/numismatics/coutries/${this.coutry}/monetary-periods/${this.coin.periodId}/coins/${this.coin.coinId}/reverse.png`;
+    return `assets/images/numismatics/countries/${this.country}/monetary-periods/${this.coin.periodId}/coins/${this.coin.coinId}/reverse.png`;
   }
 
 }
