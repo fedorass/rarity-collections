@@ -55,15 +55,35 @@ export class NavigationComponent implements OnInit {
 
     this.monetaryPeriodService.findAll(country.value)
       .subscribe(monetaryPeriods => {    
-        this.monetaryPeriods = monetaryPeriods.map(monetaryPeriod => {
 
-          return {
+        let groups = new Set();
+
+        this.monetaryPeriods = [];
+
+        monetaryPeriods.forEach(monetaryPeriod => {
+
+          let item = {
             value: monetaryPeriod.periodId, 
             label: monetaryPeriod.startYear + ' - ' + ((monetaryPeriod.endYear)? monetaryPeriod.endYear : 'Now'),
             materials: monetaryPeriod.materials,
             denominations: monetaryPeriod.denominations
+          };
+
+          if (monetaryPeriod.groupName && !groups.has(monetaryPeriod.groupName)) {
+            
+            groups.add(monetaryPeriod.groupName);
+
+            let groupItem = {
+              value: '',
+              label: monetaryPeriod.groupName,
+              group: true
+            }
+
+            this.monetaryPeriods.push(groupItem);
           }
-        })
+
+          this.monetaryPeriods.push(item);
+        });
 
         this.isPeriodsDisabled = this.monetaryPeriods.length === 0;
       });
