@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   host: {
-    'class': 'container-fluid d-flex flex-column h-100 align-items-center px-0'
+    'class': 'container-fluid d-flex flex-column flex-grow'
   }
 })
 export class AppComponent {

@@ -6,7 +6,7 @@ import { NumismaticsService } from '../numismatics.service';
   templateUrl: './numismatics.component.html',
   styleUrls: ['./numismatics.component.scss'],
   host: {
-    'class': 'row mt-3'
+    'class': 'row d-flex flex-grow'
   }
 })
 export class NumismaticsComponent implements OnInit {
