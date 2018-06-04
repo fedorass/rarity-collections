@@ -21,6 +21,7 @@ import { CountryService } from './content/country.service';
 import { MonetaryPeriodService } from './content/monetary-period.service';
 import { NumismaticsService } from './content/numismatics.service';
 import { FilterComponent } from './content/filter/filter.component';
+import { PaginationComponent } from './content/pagination/pagination.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FilterComponent } from './content/filter/filter.component';
     NumismaticsComponent,
     NavigationComponent,
     CoinComponent,
-    FilterComponent
+    FilterComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

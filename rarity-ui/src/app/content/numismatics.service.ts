@@ -12,7 +12,7 @@ export class NumismaticsService {
 
   }
 
-  findAll(monetaryPeriodId: string, query?: string): Observable<any[]> {
+  findAll(monetaryPeriodId: string, query?: string): Observable<any> {
 
     let queryUrl: string = `${this.baseUrl}/periods/${monetaryPeriodId}/coins`;
 
@@ -21,10 +21,14 @@ export class NumismaticsService {
     }
 
     return this.http.get(queryUrl).map((response: Response) => {
-      return (<any>response.json()).map(item => {
-        return item;
-      });
+      const totalCount = response.headers.get('X-Total-Count');
+      return {
+        totalCount: totalCount,
+        content: (<any>response.json()).map(item => {
+          return item;
+        })
+      }
     });
-   }
+  }
 
 }
