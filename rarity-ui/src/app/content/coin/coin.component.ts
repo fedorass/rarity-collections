@@ -13,7 +13,7 @@ export class CoinComponent implements OnInit {
   @Input() coin: any;  
   @Input() country: string;   
   
-  private IMG_BASE_URL: string = 'https://bank.gov.ua/control/uk/currentmoney/image?';
+  private IMG_BASE_URL: string = 'https://s3.eu-central-1.amazonaws.com/ua.numismatics.oleksandr.fedoras.static.images/numismatics/countries/';
   
   constructor() { }
 
@@ -21,11 +21,11 @@ export class CoinComponent implements OnInit {
   }
 
   buildObverseImageUrl(): string {
-    return `assets/images/numismatics/countries/${this.country}/monetary-periods/${this.coin.periodId}/coins/${this.coin.coinId}/obverse.png`;
+    return this.IMG_BASE_URL + `${this.country}/monetary-periods/${this.coin.periodId}/coins/${this.coin.coinId}/obverse.png`;
   }
 
   buildReverseImageUrl(): string {
-    return `assets/images/numismatics/countries/${this.country}/monetary-periods/${this.coin.periodId}/coins/${this.coin.coinId}/reverse.png`;
+    return this.IMG_BASE_URL +  `${this.country}/monetary-periods/${this.coin.periodId}/coins/${this.coin.coinId}/reverse.png`;
   }
 
 }
