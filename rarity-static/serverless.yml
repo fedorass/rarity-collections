@@ -1,0 +1,34 @@
+service: rarity-static
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: eu-central-1
+
+custom:
+  s3Sync:
+    - bucketName: ua.numismatics.oleksandr.fedoras.static.images
+      localDir: static 
+
+resources:
+  Resources:
+    ImagesBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ua.numismatics.oleksandr.fedoras.static.images
+        AccessControl: PublicRead
+    ImagesBucketBucketPermissions:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: ua.numismatics.oleksandr.fedoras.static.images
+        PolicyDocument:
+          Statement:
+            - Principal: "*"
+              Action:
+                - s3:GetObject
+              Effect: Allow
+              Sid: "AddPerm"
+              Resource: arn:aws:s3:::ua.numismatics.oleksandr.fedoras.static.images/*        
+
+plugins:
+  - serverless-s3-sync
