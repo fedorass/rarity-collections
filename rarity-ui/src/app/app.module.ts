@@ -48,7 +48,7 @@ import { PaginationComponent } from './content/pagination/pagination.component';
     MonetaryPeriodService,
     NumismaticsService,
     {
-      provide: 'API_ENDPOINT', useValue: 'http://localhost:3000/api'
+      provide: 'API_ENDPOINT', useValue: 'http://localhost:3000/api' //dev
     }
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

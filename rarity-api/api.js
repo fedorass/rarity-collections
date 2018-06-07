@@ -88,7 +88,8 @@ module.exports.numismatics = (event, context, callback) => {
 
   const params = {
     TableName: 'Numismatics',
-    KeyConditionExpression: '#periodId = :periodId',
+    IndexName: 'NumismaticsDefaultIndex',
+    FilterExpression: '#periodId = :periodId',
     ExpressionAttributeNames:{
         '#periodId': 'periodId'
     },
@@ -98,14 +99,16 @@ module.exports.numismatics = (event, context, callback) => {
     Limit: pageSize
   };
 
-  if (queryParams.periodId && queryParams.coinId) {
+  if (queryParams.periodId && queryParams.coinId && queryParams.issueDate && queryParams.rate) {
     params.ExclusiveStartKey = {
       'periodId': queryParams.periodId,
-      'coinId': queryParams.coinId
+      'coinId': queryParams.coinId,
+      'issueDate': Number(queryParams.issueDate),
+      'rate': Number(queryParams.rate)
     };
   }
 
-  docClient.query(params, (error, result) => {
+  docClient.scan(params, (error, result) => {
 
     if (error) {
       console.error(error);
