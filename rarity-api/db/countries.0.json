@@ -1,0 +1,54 @@
+[
+    { 
+        "userId": "ce06f1b5-9d40-49fc-b61f-16b1ca006a30",
+        "countryId": "376595f0-0e87-40ae-b3b5-0c882403ac23", 
+        "code": "DE",
+        "name": "Німеччина"
+    },
+    { 
+        "userId": "ce06f1b5-9d40-49fc-b61f-16b1ca006a30",
+        "countryId": "f62445c8-a717-4909-9c13-ad72fbc7f09e",
+        "code": "UA",
+        "name": "Україна",
+        "materials": [
+            {
+                "code": "silver925",
+                "material": "Срібло 925"
+            },
+            {
+                "code": "german-silver",
+                "material": "Мельхіор"
+            }               
+        ]
+    },
+    { 
+        "userId": "ce06f1b5-9d40-49fc-b61f-16b1ca006a30",
+        "countryId": "b9210c28-5976-481f-ab26-3a2acc6613a1",
+        "code": "GB",
+        "name": "Великобританія"
+    },
+    { 
+        "userId": "ce06f1b5-9d40-49fc-b61f-16b1ca006a30",
+        "countryId": "10bd8822-353a-4cf6-bfa4-d82affb97e76",
+        "code": "US",
+        "name": "Сполучені Штати Америки", 
+        "materials": [
+            {
+                "code": "silver400",
+                "material": "Срібло 400"
+            },
+            {
+                "code": "silver900",
+                "material": "Срібло 900"
+            },
+            {
+                "code": "copper",
+                "material": "Мідь"
+            },
+            {
+                "code": "zinc",
+                "material": "Цинк"
+            }            
+        ]
+    }
+]

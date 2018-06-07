@@ -1,0 +1,106 @@
+[
+    { 
+        "countryId": "f62445c8-a717-4909-9c13-ad72fbc7f09e",
+        "periodId": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720",
+        "startYear": 1995,
+        "endYear": 1996,
+        "denominations": [
+            { 
+                "code": "denomination_200000",
+                "denomination": "200000 карбованців",
+                "rate": 200000
+            },
+            { 
+                "code": "denomination_1000000",
+                "denomination": "1000000 карбованців",
+                "rate": 1000000
+            },
+            { 
+                "code": "denomination_2000000",
+                "denomination": "2000000 карбованців",
+                "rate": 2000000
+            }
+        ]
+    },
+    { 
+        "countryId": "f62445c8-a717-4909-9c13-ad72fbc7f09e",
+        "periodId": "428b6b1f-6aa6-44c8-ad2d-ea5fe964fec2",
+        "startYear": 1996,
+        "materials": [
+            {
+                "code": "nickel-silver",
+                "material": "Нейзильбер"
+            }               
+        ],
+        "denominations": [
+            { 
+                "code": "denomination_2",
+                "denomination": "2 гривні",
+                "rate": 2
+            },
+            { 
+                "code": "denomination_5",
+                "denomination": "5 гривень",
+                "rate": 5
+            }
+        ]
+    },
+    { 
+        "countryId": "10bd8822-353a-4cf6-bfa4-d82affb97e76",
+        "periodId": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30",
+        "startYear": 1900,
+        "denominations": [
+            { 
+                "code": "denomination_0_01",
+                "denomination": "1 цент",
+                "rate": 0.01
+            },
+            { 
+                "code": "denomination_0_05",
+                "denomination": "5 центів",
+                "rate": 0.05
+            },
+            { 
+                "code": "denomination_0_10",
+                "denomination": "10 центів",
+                "rate": 0.10
+            },
+            { 
+                "code": "denomination_0_25",
+                "denomination": "25 центів",
+                "rate": 0.25
+            },
+            { 
+                "code": "denomination_0_5",
+                "denomination": "50 центів",
+                "rate": 0.5
+            },
+            { 
+                "code": "denomination_1",
+                "denomination": "1 долар",
+                "rate": 1
+            }
+        ]
+    },
+
+    { 
+        "countryId": "b9210c28-5976-481f-ab26-3a2acc6613a1",
+        "periodId": "dc6aba7b-dc24-44ee-8a23-a11e14174b95",
+        "startYear": 1937,
+        "endYear": 1952,
+        "groupName": "Король Георг VI"
+    },
+    { 
+        "countryId": "b9210c28-5976-481f-ab26-3a2acc6613a1",
+        "periodId": "b9210c28-5976-481f-ab26-3a2acc6613a1",
+        "startYear": 1953,
+        "endYear": 1967,
+        "groupName": "Королева Єлизавета II"
+    },
+    { 
+        "countryId": "b9210c28-5976-481f-ab26-3a2acc6613a1",
+        "periodId": "1f9a9f33-d218-4a77-896e-5f668841b270",
+        "startYear": 1967,
+        "groupName": "Королева Єлизавета II"
+    }
+]
