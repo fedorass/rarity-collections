@@ -14,7 +14,7 @@ export class CountryService {
 
    findAll(userId: string): Observable<any[]> {
 
-    const queryUrl = `${this.baseUrl}/user/${userId}/countries`;
+    const queryUrl = `${this.baseUrl}/users/${userId}/countries`;
 
     return this.http.get(queryUrl).map((response: Response) => {
       return (<any>response.json()).map(item => {

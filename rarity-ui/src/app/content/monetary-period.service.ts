@@ -14,7 +14,7 @@ export class MonetaryPeriodService {
 
   findAll(countryId: string): Observable<any[]> {
 
-    const queryUrl = `${this.baseUrl}/country/${countryId}/periods`;
+    const queryUrl = `${this.baseUrl}/countries/${countryId}/periods`;
 
     return this.http.get(queryUrl).map((response: Response) => {
       return (<any>response.json()).map(item => {

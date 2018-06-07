@@ -3,6 +3,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CountryService } from '../country.service';
 import { MonetaryPeriodService } from '../monetary-period.service';
 
+const DEFAULT_USER_ID = 'ce06f1b5-9d40-49fc-b61f-16b1ca006a30'; //'oleksandr.fedoras@gmail.com'
+
 @Component({
   selector: 'grid-navigation',
   templateUrl: './navigation.component.html',
@@ -29,7 +31,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
 
-    this.countryService.findAll('oleksandr.fedoras@gmail.com')
+    this.countryService.findAll(DEFAULT_USER_ID)
       .subscribe(countries => {
         this.countries = [];
         this.countries = countries.map(country => {
