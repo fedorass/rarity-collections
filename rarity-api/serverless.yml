@@ -25,6 +25,15 @@ provider:
         "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.MONETARY_PERIOD_DYNAMODB_TABLE}",
         "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.NUMISMATICS_DYNAMODB_TABLE}"
       ]
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+      Resource: [
+        "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.COUNTRIES_DYNAMODB_TABLE}/index/*",
+        "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.MONETARY_PERIOD_DYNAMODB_TABLE}/index/*",
+        "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.NUMISMATICS_DYNAMODB_TABLE}/index/*"
+      ]
 
 functions:
   findAllCountries:
@@ -179,7 +188,7 @@ custom:
           - table: ${self:provider.environment.MONETARY_PERIOD_DYNAMODB_TABLE}
             sources: [./db/periods.0.json]  
           - table: ${self:provider.environment.NUMISMATICS_DYNAMODB_TABLE}
-            sources: [./db/coins.us.json, ./db/coins.ua.json]
+            sources: ['./db/coins.us.json', './db/coins.ua.json']
 
 plugins:
   - serverless-dynamodb-local
