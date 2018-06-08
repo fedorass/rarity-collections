@@ -4,13 +4,12 @@ var uuid = require('uuid');
 var AWS = require('aws-sdk');
 
 var docClient = new AWS.DynamoDB.DocumentClient({
-  region: 'localhost',
-  endpoint: 'http://localhost:8000'
+  region: 'eu-central-1'
 });
 
 
 const DEFAULT_PAGE_SIZE = 12;
-const LAST_EVALUATED_KEY_HEADER_NAME = 'X-Last-Evaluated-Key';
+const LAST_EVALUATED_KEY_HEADER_NAME = 'x-last-evaluated-key';
 
 module.exports.countries = (event, context, callback) => {
   
@@ -31,14 +30,20 @@ module.exports.countries = (event, context, callback) => {
       console.error(error);
       return callback(null, {
         statusCode: error.statusCode || 500,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+         },
         body: JSON.stringify({'message': 'Could not fetch Countries.'})
       });
     }
 
     const response = {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*' 
+      },
       body: JSON.stringify(result.Items)
     }
     callback(null, response);
@@ -65,14 +70,20 @@ module.exports.periods = (event, context, callback) => {
       console.error(error);
       return callback(null, {
         statusCode: error.statusCode || 500,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*' 
+        },
         body: JSON.stringify({'message': 'Could not fetch Monetary Periods.'})
       });
     }
 
     const response = {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*' 
+      },
       body: JSON.stringify(result.Items)
     }
     callback(null, response);
@@ -80,15 +91,14 @@ module.exports.periods = (event, context, callback) => {
 };
 
 module.exports.numismatics = (event, context, callback) => {
-
+  
   const queryParams = event.queryStringParameters || {};
 
-  const pageSize = Number(queryParams.size) || DEFAULT_PAGE_SIZE;
+  const pageSize = Number(queryParams.pageSize) || DEFAULT_PAGE_SIZE;
 
   const params = {
     TableName: 'Numismatics',
-    IndexName: 'NumismaticsDefaultIndex',
-    FilterExpression: '#periodId = :periodId',
+    KeyConditionExpression: '#periodId = :periodId',
     ExpressionAttributeNames:{
         '#periodId': 'periodId'
     },
@@ -102,13 +112,16 @@ module.exports.numismatics = (event, context, callback) => {
     params.ExclusiveStartKey = JSON.parse(event.headers[LAST_EVALUATED_KEY_HEADER_NAME]);
   }
 
-  docClient.scan(params, (error, result) => {
+  docClient.query(params, (error, result) => {
 
     if (error) {
       console.error(error);
       return callback(null, {
         statusCode: error.statusCode || 500,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
         body: JSON.stringify({'message': 'Could not fetch Numismatics Coins.'})
       });
     }
@@ -117,7 +130,9 @@ module.exports.numismatics = (event, context, callback) => {
       statusCode: 200,
       headers: { 
         'Content-Type': 'application/json',
-        'X-Last-Evaluated-Key': JSON.stringify(result.LastEvaluatedKey)
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Expose-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,x-last-evaluated-key',
+        'x-last-evaluated-key': JSON.stringify(result.LastEvaluatedKey)
       },
       body: JSON.stringify(result.Items)
     }

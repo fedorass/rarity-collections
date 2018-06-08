@@ -63,7 +63,29 @@ functions:
       - http:
           path: api/periods/{id}/coins
           method: get
-          cors: true
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type,
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - x-last-evaluated-key
+            allowCredentials: true
+      - http:
+          path: api/periods/{id}/coins
+          method: options
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type,
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - x-last-evaluated-key
+            allowCredentials: true
 
 resources:
   Resources:
