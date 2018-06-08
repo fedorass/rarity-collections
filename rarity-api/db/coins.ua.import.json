@@ -1,0 +1,436 @@
+{
+  "Numismatics": [
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "e7d44e4d-8d38-4365-9e62-401610910f15"
+          },
+          "issueDate": {
+            "N": "799794000000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "a03cfaed-c611-4bbc-bb40-af0942ad4057"
+          },
+          "issueDate": {
+            "N": "806101200000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "adbd1672-76a6-44fa-80fb-7408535aa249"
+          },
+          "issueDate": {
+            "N": "809125200000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "2bea2fdd-8446-45f8-af51-e956d4635665"
+          },
+          "issueDate": {
+            "N": "809125200000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "d0e56b1b-376f-4738-858e-49d6a203ac80"
+          },
+          "issueDate": {
+            "N": "825631200000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "0f5a745b-8ce2-4097-9829-8c7415af5f95"
+          },
+          "issueDate": {
+            "N": "826149600000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "3bd27d90-a520-4043-bb7c-c6e564d70210"
+          },
+          "issueDate": {
+            "N": "830379600000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "95202911-7e7d-4b57-b7a4-b6e401caefd8"
+          },
+          "issueDate": {
+            "N": "836946000000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "854b3b27-f1d4-43b4-8705-207bd484f94c"
+          },
+          "issueDate": {
+            "N": "839538000000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "359f6639-c9e9-4480-a5df-5af2e3af16c7"
+          },
+          "issueDate": {
+            "N": "836946000000"
+          },
+          "metal": {
+            "S": "Мельхіор"
+          },
+          "denomination": {
+            "S": "200000 карбованців"
+          },
+          "rate": {
+            "N": "200000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "d283d7e3-ff6e-454f-b9b1-c692ea6a7268"
+          },
+          "issueDate": {
+            "N": "835304400000"
+          },
+          "metal": {
+            "S": "Срібло 925"
+          },
+          "denomination": {
+            "S": "1000000 карбованців"
+          },
+          "rate": {
+            "N": "1000000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "0efe08f9-146e-4d8a-b690-966256ce55d8"
+          },
+          "issueDate": {
+            "N": "839538000000"
+          },
+          "metal": {
+            "S": "Срібло 925"
+          },
+          "denomination": {
+            "S": "1000000 карбованців"
+          },
+          "rate": {
+            "N": "1000000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "db3d635f-441a-40eb-af09-2f5bf64829d8"
+          },
+          "issueDate": {
+            "N": "836946000000"
+          },
+          "metal": {
+            "S": "Срібло 925"
+          },
+          "denomination": {
+            "S": "2000000 карбованців"
+          },
+          "rate": {
+            "N": "2000000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "coinId": {
+            "S": "ae5478ae-aef7-41e7-911c-35d7147500d6"
+          },
+          "issueDate": {
+            "N": "836946000000"
+          },
+          "metal": {
+            "S": "Срібло 925"
+          },
+          "denomination": {
+            "S": "2000000 карбованців"
+          },
+          "rate": {
+            "N": "2000000"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "428b6b1f-6aa6-44c8-ad2d-ea5fe964fec2"
+          },
+          "coinId": {
+            "S": "6b2c7ee1-27e4-4741-8523-f58015022a78"
+          },
+          "issueDate": {
+            "N": "1208898000000"
+          },
+          "metal": {
+            "S": "Нейзильбер"
+          },
+          "denomination": {
+            "S": "2 гривні"
+          },
+          "rate": {
+            "N": "2"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "428b6b1f-6aa6-44c8-ad2d-ea5fe964fec2"
+          },
+          "coinId": {
+            "S": "7d1aef7a-da99-4f9a-b767-bd349730ba03"
+          },
+          "issueDate": {
+            "N": "1211490000000"
+          },
+          "metal": {
+            "S": "Нейзильбер"
+          },
+          "denomination": {
+            "S": "2 гривні"
+          },
+          "rate": {
+            "N": "2"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "428b6b1f-6aa6-44c8-ad2d-ea5fe964fec2"
+          },
+          "coinId": {
+            "S": "563a3bc6-37ca-4aea-ae0a-d1f2929ec972"
+          },
+          "issueDate": {
+            "N": "1226959200000"
+          },
+          "metal": {
+            "S": "Нейзильбер"
+          },
+          "denomination": {
+            "S": "2 гривні"
+          },
+          "rate": {
+            "N": "2"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "428b6b1f-6aa6-44c8-ad2d-ea5fe964fec2"
+          },
+          "coinId": {
+            "S": "2e56ee98-c390-4e69-9770-ef3d9c10bace"
+          },
+          "issueDate": {
+            "N": "1230156000000"
+          },
+          "metal": {
+            "S": "Нейзильбер"
+          },
+          "denomination": {
+            "S": "2 гривні"
+          },
+          "rate": {
+            "N": "2"
+          }
+        }
+      }
+    }
+  ]
+}

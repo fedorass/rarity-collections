@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { NumismaticsService } from '../numismatics.service';
+
+const LAST_EVALUATED_KEY_HEADER_NAME = 'X-Last-Evaluated-Key';
+const DEFAULT_PAGE_SIZE = 12;
 
 @Component({
   templateUrl: './numismatics.component.html',
@@ -10,8 +13,9 @@ import { NumismaticsService } from '../numismatics.service';
   }
 })
 export class NumismaticsComponent implements OnInit {
-  
-  PAGE_SIZE: number = 12;
+
+  @ViewChild('coinsView') 
+  coinsView: ElementRef;
 
   materialFilters: Array<any> = [];
   denominationFilters: Array<any> = [];  
@@ -24,8 +28,9 @@ export class NumismaticsComponent implements OnInit {
   selectedDenomination: string;
   selectedMaterial: string;
 
-  pageNumber: number = 1;
-  pageTotal: number = 1;
+  lastEvaluatedKeys: Array<any> = [{}];
+
+  pageNumber: number = 0;
 
   constructor(private numismaticsService: NumismaticsService) { }
 
@@ -38,15 +43,16 @@ export class NumismaticsComponent implements OnInit {
     this.denominationFilters = filters.denominationFilters;
     this.countryId = filters.countryId;
 
-    this.pageNumber = 1;
-    this.pageTotal = 0;
+    this.pageNumber = 0;
+    this.lastEvaluatedKeys = [{}];
+
     if (filters.monetaryPeriodId) {
       this.monetaryPeriodId = filters.monetaryPeriodId;
-      const query: string = '_limit=' + this.PAGE_SIZE;
+      const query: string = 'pageSize=' + DEFAULT_PAGE_SIZE;
         this.numismaticsService.findAll(filters.monetaryPeriodId, query)
             .subscribe(responce => {
                 this.coins = responce.content;
-                this.pageTotal = responce.totalCount;
+                this.lastEvaluatedKeys[this.pageNumber].next  = responce.lastEvaluatedKey;
             })
     }
     else {
@@ -84,32 +90,40 @@ export class NumismaticsComponent implements OnInit {
       queryParams.push(`metal=${this.selectedMaterial}`);
     }
 
-    queryParams.push('_page=' + this.pageNumber);
-    queryParams.push('_limit=' + this.PAGE_SIZE);
+    queryParams.push('pageSize=' + DEFAULT_PAGE_SIZE);
 
     const query: string = queryParams.join('&');
 
-    this.numismaticsService.findAll(this.monetaryPeriodId, query)
+    this.numismaticsService.findAll(this.monetaryPeriodId, query, this.lastEvaluatedKeys[this.pageNumber].current)
       .subscribe(responce => {
         this.coins = responce.content;
-        this.pageTotal = responce.totalCount;
-        this.pageNumber = (responce.content)? this.pageNumber : 0;
-      });
+        this.lastEvaluatedKeys[this.pageNumber].next = responce.lastEvaluatedKey;
+    });
+
+    this.coinsView.nativeElement.scrollTop = 0;
   }
 
   getTotalPages(): number {
     if (this.coins.length) {
-      return Math.ceil(this.pageTotal / this.PAGE_SIZE);
+      return this.lastEvaluatedKeys.length;
     }
     else {
       return 0;
     }
-    
   }
 
   onPageNumberChanged(pageNumber: number): void {
+    if (!this.lastEvaluatedKeys[pageNumber]) {
+      this.lastEvaluatedKeys.push({
+        'current': this.lastEvaluatedKeys[this.pageNumber].next
+      });
+    }
     this.pageNumber = pageNumber;
     this.triggerFilterRequest();
+  }
+
+  hasMore(): boolean {
+    return this.lastEvaluatedKeys[this.lastEvaluatedKeys.length - 1].next;
   }
 
 }

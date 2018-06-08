@@ -1,0 +1,604 @@
+{
+  "Numismatics": [
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "b2660db9-1ca0-46bb-9f00-76ddae7249e9"
+          },
+          "issueDate": {
+            "N": "-3313447200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 цент"
+          },
+          "rate": {
+            "N": "0.01"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "fd744437-3a17-4703-9022-d173891ee958"
+          },
+          "issueDate": {
+            "N": "-1906599600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 цент"
+          },
+          "rate": {
+            "N": "0.01"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "ffd7fd86-1b6a-4415-8281-17c1870f1d62"
+          },
+          "issueDate": {
+            "N": "-343533600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 цент"
+          },
+          "rate": {
+            "N": "0.01"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "83b5f9c2-341e-47dc-9a2d-6ea1679c0c19"
+          },
+          "issueDate": {
+            "N": "1234389600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 цент"
+          },
+          "rate": {
+            "N": "0.01"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "4896c215-42f2-440e-92b4-ed1fb8a8dd36"
+          },
+          "issueDate": {
+            "N": "1242248400000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 цент"
+          },
+          "rate": {
+            "N": "0.01"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "97ea60d1-2d95-4bec-8728-239ab857462f"
+          },
+          "issueDate": {
+            "N": "1250110800000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 цент"
+          },
+          "rate": {
+            "N": "0.01"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "283e6dba-961a-45f3-ae1f-85d24f429c0b"
+          },
+          "issueDate": {
+            "N": "1257976800000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 цент"
+          },
+          "rate": {
+            "N": "0.01"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "1580c812-4d3a-43a0-a27d-b5d55b086fd5"
+          },
+          "issueDate": {
+            "N": "1262296800000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 цент"
+          },
+          "rate": {
+            "N": "0.01"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "a129e273-9804-4f6b-ad2b-e93f2791d154"
+          },
+          "issueDate": {
+            "N": "-1794276000000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "5 центів"
+          },
+          "rate": {
+            "N": "0.05"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "2e28a254-161d-422c-9150-df6db7d82af4"
+          },
+          "issueDate": {
+            "N": "-986094000000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "5 центів"
+          },
+          "rate": {
+            "N": "0.05"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "dcbe5892-3157-480d-b139-fb516225c08e"
+          },
+          "issueDate": {
+            "N": "1136066400000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "5 центів"
+          },
+          "rate": {
+            "N": "0.05"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "73750b73-4490-44f4-8f9e-52a8f52afcd3"
+          },
+          "issueDate": {
+            "N": "694216800000"
+          },
+          "metal": {
+            "S": "Срібло 900"
+          },
+          "denomination": {
+            "S": "10 центів"
+          },
+          "rate": {
+            "N": "0.1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "cbcee748-8e51-4906-9012-adb035bbcb32"
+          },
+          "issueDate": {
+            "N": "157759200000"
+          },
+          "metal": {
+            "S": "Срібло 400"
+          },
+          "denomination": {
+            "S": "25 центів"
+          },
+          "rate": {
+            "N": "0.25"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "b997a215-0855-48c5-a1da-ddb017175bd2"
+          },
+          "issueDate": {
+            "N": "694216800000"
+          },
+          "metal": {
+            "S": "Срібло 900"
+          },
+          "denomination": {
+            "S": "25 центів"
+          },
+          "rate": {
+            "N": "0.25"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "584534cf-2901-4aae-9042-5d3a6fc0bcab"
+          },
+          "issueDate": {
+            "N": "157759200000"
+          },
+          "metal": {
+            "S": "Срібло 400"
+          },
+          "denomination": {
+            "S": "50 центів"
+          },
+          "rate": {
+            "N": "0.5"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "1be2a3d6-3427-49b4-9d26-fa4e93adbf0f"
+          },
+          "issueDate": {
+            "N": "694216800000"
+          },
+          "metal": {
+            "S": "Срібло 900"
+          },
+          "denomination": {
+            "S": "50 центів"
+          },
+          "rate": {
+            "N": "0.5"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "fea226e0-438a-4dbf-8ed2-a9cd11a1f946"
+          },
+          "issueDate": {
+            "N": "-2894151600000"
+          },
+          "metal": {
+            "S": "Срібло 900"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "31b39799-29a1-4ee5-9081-9583edcd5ff6"
+          },
+          "issueDate": {
+            "N": "-1515117600000"
+          },
+          "metal": {
+            "S": "Срібло 900"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "3570f2d8-fbe3-448b-afc4-fb9c0bf33f01"
+          },
+          "issueDate": {
+            "N": "31528800000"
+          },
+          "metal": {
+            "S": "Срібло 400"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "34e75d5c-a5fb-4520-a71d-17c421b96420"
+          },
+          "issueDate": {
+            "N": "157759200000"
+          },
+          "metal": {
+            "S": "Срібло 400"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "01fd5b5b-8534-463e-b4ac-206bec12f0e5"
+          },
+          "issueDate": {
+            "N": "283989600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "0c8e3735-21c3-4f0b-98f1-64f8421ccd21"
+          },
+          "issueDate": {
+            "N": "946677600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "44854f78-cb11-43dc-9909-2ecaa696a2ec"
+          },
+          "issueDate": {
+            "N": "1451599200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "07ae30d6-b0af-4e50-8e74-de0bd2eb4ce4"
+          },
+          "issueDate": {
+            "N": "1171490400000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "134da316-43c5-42c3-abab-a076004cd014"
+          },
+          "issueDate": {
+            "N": "1179349200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    }
+  ]
+}

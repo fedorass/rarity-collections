@@ -1,0 +1,281 @@
+{
+  "MonetaryPeriod": [
+    {
+      "PutRequest": {
+        "Item": {
+          "countryId": {
+            "S": "f62445c8-a717-4909-9c13-ad72fbc7f09e"
+          },
+          "periodId": {
+            "S": "7e9e28cd-e9ec-4162-a8df-00c40a0c1720"
+          },
+          "startYear": {
+            "N": "1995"
+          },
+          "endYear": {
+            "N": "1996"
+          },
+          "denominations": {
+            "L": [
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_200000"
+                  },
+                  "denomination": {
+                    "S": "200000 карбованців"
+                  },
+                  "rate": {
+                    "N": "200000"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_1000000"
+                  },
+                  "denomination": {
+                    "S": "1000000 карбованців"
+                  },
+                  "rate": {
+                    "N": "1000000"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_2000000"
+                  },
+                  "denomination": {
+                    "S": "2000000 карбованців"
+                  },
+                  "rate": {
+                    "N": "2000000"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "countryId": {
+            "S": "f62445c8-a717-4909-9c13-ad72fbc7f09e"
+          },
+          "periodId": {
+            "S": "428b6b1f-6aa6-44c8-ad2d-ea5fe964fec2"
+          },
+          "startYear": {
+            "N": "1996"
+          },
+          "materials": {
+            "L": [
+              {
+                "M": {
+                  "code": {
+                    "S": "nickel-silver"
+                  },
+                  "material": {
+                    "S": "Нейзильбер"
+                  }
+                }
+              }
+            ]
+          },
+          "denominations": {
+            "L": [
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_2"
+                  },
+                  "denomination": {
+                    "S": "2 гривні"
+                  },
+                  "rate": {
+                    "N": "2"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_5"
+                  },
+                  "denomination": {
+                    "S": "5 гривень"
+                  },
+                  "rate": {
+                    "N": "5"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "countryId": {
+            "S": "10bd8822-353a-4cf6-bfa4-d82affb97e76"
+          },
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "startYear": {
+            "N": "1900"
+          },
+          "denominations": {
+            "L": [
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_0_01"
+                  },
+                  "denomination": {
+                    "S": "1 цент"
+                  },
+                  "rate": {
+                    "N": "0.01"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_0_05"
+                  },
+                  "denomination": {
+                    "S": "5 центів"
+                  },
+                  "rate": {
+                    "N": "0.05"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_0_10"
+                  },
+                  "denomination": {
+                    "S": "10 центів"
+                  },
+                  "rate": {
+                    "N": "0.1"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_0_25"
+                  },
+                  "denomination": {
+                    "S": "25 центів"
+                  },
+                  "rate": {
+                    "N": "0.25"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_0_5"
+                  },
+                  "denomination": {
+                    "S": "50 центів"
+                  },
+                  "rate": {
+                    "N": "0.5"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "denomination_1"
+                  },
+                  "denomination": {
+                    "S": "1 долар"
+                  },
+                  "rate": {
+                    "N": "1"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "countryId": {
+            "S": "b9210c28-5976-481f-ab26-3a2acc6613a1"
+          },
+          "periodId": {
+            "S": "dc6aba7b-dc24-44ee-8a23-a11e14174b95"
+          },
+          "startYear": {
+            "N": "1937"
+          },
+          "endYear": {
+            "N": "1952"
+          },
+          "groupName": {
+            "S": "Король Георг VI"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "countryId": {
+            "S": "b9210c28-5976-481f-ab26-3a2acc6613a1"
+          },
+          "periodId": {
+            "S": "b9210c28-5976-481f-ab26-3a2acc6613a1"
+          },
+          "startYear": {
+            "N": "1953"
+          },
+          "endYear": {
+            "N": "1967"
+          },
+          "groupName": {
+            "S": "Королева Єлизавета II"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "countryId": {
+            "S": "b9210c28-5976-481f-ab26-3a2acc6613a1"
+          },
+          "periodId": {
+            "S": "1f9a9f33-d218-4a77-896e-5f668841b270"
+          },
+          "startYear": {
+            "N": "1967"
+          },
+          "groupName": {
+            "S": "Королева Єлизавета II"
+          }
+        }
+      }
+    }
+  ]
+}

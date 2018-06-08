@@ -1,0 +1,604 @@
+{
+  "Numismatics": [
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "1c70e917-6ec1-4b49-adaa-2e9fabb25326"
+          },
+          "issueDate": {
+            "N": "1187211600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "2a36bd13-ee78-48e9-8390-8bec6caaaf37"
+          },
+          "issueDate": {
+            "N": "1195077600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "5381c83f-54cf-4596-8555-4485fa0f1ef1"
+          },
+          "issueDate": {
+            "N": "1202940000000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "67bc1cb2-12ff-44a9-8af0-5568fdeadc30"
+          },
+          "issueDate": {
+            "N": "1210798800000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "dd9ba26b-70c6-4b21-82e1-a573057d8358"
+          },
+          "issueDate": {
+            "N": "1218661200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "df6c36d0-29f8-4300-82e4-b0f56395cfba"
+          },
+          "issueDate": {
+            "N": "1226527200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "e060bac6-e3ee-496e-b736-3f305d43cad1"
+          },
+          "issueDate": {
+            "N": "1234994400000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "f3bcd0a7-b672-429d-9c64-66c2914385da"
+          },
+          "issueDate": {
+            "N": "1242853200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "7b0f63e8-5fdd-4229-9208-ebaa60443a02"
+          },
+          "issueDate": {
+            "N": "1250715600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "c0eb091c-418f-4ddf-8193-760508c0d104"
+          },
+          "issueDate": {
+            "N": "1258581600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "63aede00-0269-4463-8f70-2a8adca925e8"
+          },
+          "issueDate": {
+            "N": "1266444000000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "0fd80ec3-86b7-4d70-a482-c7029880997d"
+          },
+          "issueDate": {
+            "N": "1274302800000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "7976f6c7-03ca-4aee-b481-7fe40a346610"
+          },
+          "issueDate": {
+            "N": "1282165200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "c4be1910-5dfc-4c93-9881-c6f721e4ca7a"
+          },
+          "issueDate": {
+            "N": "1290031200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "9ccdd646-e4a1-4a3d-ac84-75acf0bad41e"
+          },
+          "issueDate": {
+            "N": "1297893600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "9ef00d0a-42c7-4259-9ddb-61fd063dfd4b"
+          },
+          "issueDate": {
+            "N": "1305752400000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "9120f789-b945-4978-91f7-eee58237bca4"
+          },
+          "issueDate": {
+            "N": "1313614800000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "074923b1-23c8-487c-a431-3c48f3c485a2"
+          },
+          "issueDate": {
+            "N": "1321480800000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "cbcdc811-4b20-41f8-b378-38dbf7be393f"
+          },
+          "issueDate": {
+            "N": "1361224800000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "5bbcb862-edca-4c0c-a52b-5d0eff313154"
+          },
+          "issueDate": {
+            "N": "1365627600000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "d977b413-516e-46fb-82ee-4a8bb1c19731"
+          },
+          "issueDate": {
+            "N": "1373317200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "c0d9747a-968a-4768-8fe4-9729ef2705ad"
+          },
+          "issueDate": {
+            "N": "1381957200000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "47c2b365-752f-4649-8d18-1cee8996d977"
+          },
+          "issueDate": {
+            "N": "1454450400000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "d89c6e34-7616-4c9d-a432-8283679a6aea"
+          },
+          "issueDate": {
+            "N": "1457388000000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "periodId": {
+            "S": "17b33bd0-ed3e-4bf2-8472-357bdb9efe30"
+          },
+          "coinId": {
+            "S": "f8113f52-a62d-4fec-a024-11e8befd4689"
+          },
+          "issueDate": {
+            "N": "1467666000000"
+          },
+          "metal": {
+            "S": "Мідь"
+          },
+          "denomination": {
+            "S": "1 долар"
+          },
+          "rate": {
+            "N": "1"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
     <grid-navigation (onNavChanged)="onNavChanged($event)"></grid-navigation>
     
-    <div class="scrollable d-flex flex-column flex-grow mt-3 mb-3">
+    <div class="scrollable d-flex flex-column flex-grow mt-3 mb-3" #coinsView>
             <div class="col-lg-12" *ngIf="coins.length !== 0">
                 <div class="row" *ngIf="coins.length !== 0">
                     <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let coin of coins">
@@ -16,19 +16,19 @@
     </div>
 
 
-    <grid-pagination [pageNumber]="pageNumber" [totalPages]="getTotalPages()" (onPageNumberChanged)="onPageNumberChanged($event)"></grid-pagination>
+    <grid-pagination [pageNumber]="pageNumber" [totalPages]="getTotalPages()" [hasMore]="hasMore()" (onPageNumberChanged)="onPageNumberChanged($event)"></grid-pagination>
 
 </div>
 
 <div class="col-lg-2 scrollable">
     <div class="row">
-        <div class="col-md-6 col-lg-12 mb-1">
+        <!--div class="col-md-6 col-lg-12 mb-1">
             <h5 class="font-weight-bold dark-grey-text"><strong>Order By</strong></h5>
             <div class="divider"></div>
 
             <p class="blue-text"><a>Default</a></p>
             <p class="dark-grey-text"><a>By Issue Date</a></p>
-        </div>
+        </div-->
 
         <grid-filter [label]="'Material'" [name]="'material'" [values]="materialFilters" (onFilterChanged)="onMaterialChanged($event)"></grid-filter>
 

@@ -16,30 +16,30 @@ export class PaginationComponent implements OnInit {
   @Input()
   totalPages: number;
 
+  @Input()
+  hasMore: boolean;
+
   @Output() onPageNumberChanged = new EventEmitter<number>();
 
   constructor() {
-    this.pageNumber = 1;
+    this.pageNumber = 0;
     this.totalPages = 0;
+    this.hasMore = false;
    }
 
   ngOnInit() {
   }
 
   isFirst(): boolean {
-    return this.totalPages === 0 || this.pageNumber === 1;
-  }
-
-  isLast(): boolean {
-    return this.totalPages === 0 || this.pageNumber === this.totalPages;
+    return this.totalPages === 0 || this.pageNumber === 0;
   }
 
   hasNext(): boolean {
-    return this.pageNumber < this.totalPages;
+    return this.pageNumber < (this.totalPages - 1) || this.hasMore;
   }
 
   hasPrevious(): boolean {
-    return this.pageNumber > 1;
+    return this.pageNumber > 0;
   }
 
   getPageNumbers(): any[] {

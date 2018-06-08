@@ -1,0 +1,144 @@
+{
+  "Countries": [
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "ce06f1b5-9d40-49fc-b61f-16b1ca006a30"
+          },
+          "countryId": {
+            "S": "376595f0-0e87-40ae-b3b5-0c882403ac23"
+          },
+          "code": {
+            "S": "DE"
+          },
+          "name": {
+            "S": "Німеччина"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "ce06f1b5-9d40-49fc-b61f-16b1ca006a30"
+          },
+          "countryId": {
+            "S": "f62445c8-a717-4909-9c13-ad72fbc7f09e"
+          },
+          "code": {
+            "S": "UA"
+          },
+          "name": {
+            "S": "Україна"
+          },
+          "materials": {
+            "L": [
+              {
+                "M": {
+                  "code": {
+                    "S": "silver925"
+                  },
+                  "material": {
+                    "S": "Срібло 925"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "german-silver"
+                  },
+                  "material": {
+                    "S": "Мельхіор"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "ce06f1b5-9d40-49fc-b61f-16b1ca006a30"
+          },
+          "countryId": {
+            "S": "b9210c28-5976-481f-ab26-3a2acc6613a1"
+          },
+          "code": {
+            "S": "GB"
+          },
+          "name": {
+            "S": "Великобританія"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "ce06f1b5-9d40-49fc-b61f-16b1ca006a30"
+          },
+          "countryId": {
+            "S": "10bd8822-353a-4cf6-bfa4-d82affb97e76"
+          },
+          "code": {
+            "S": "US"
+          },
+          "name": {
+            "S": "Сполучені Штати Америки"
+          },
+          "materials": {
+            "L": [
+              {
+                "M": {
+                  "code": {
+                    "S": "silver400"
+                  },
+                  "material": {
+                    "S": "Срібло 400"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "silver900"
+                  },
+                  "material": {
+                    "S": "Срібло 900"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "copper"
+                  },
+                  "material": {
+                    "S": "Мідь"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "code": {
+                    "S": "zinc"
+                  },
+                  "material": {
+                    "S": "Цинк"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
