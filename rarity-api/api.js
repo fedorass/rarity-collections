@@ -10,6 +10,7 @@ var docClient = new AWS.DynamoDB.DocumentClient({
 
 
 const DEFAULT_PAGE_SIZE = 12;
+const LAST_EVALUATED_KEY_HEADER_NAME = 'X-Last-Evaluated-Key';
 
 module.exports.countries = (event, context, callback) => {
   
@@ -30,8 +31,8 @@ module.exports.countries = (event, context, callback) => {
       console.error(error);
       return callback(null, {
         statusCode: error.statusCode || 500,
-        headers: { 'Content-Type': 'text/plain' },
-        body: 'Could not fetch Countries.'
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({'message': 'Could not fetch Countries.'})
       });
     }
 
@@ -64,8 +65,8 @@ module.exports.periods = (event, context, callback) => {
       console.error(error);
       return callback(null, {
         statusCode: error.statusCode || 500,
-        headers: { 'Content-Type': 'text/plain' },
-        body: 'Could not fetch Monetary Periods.'
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({'message': 'Could not fetch Monetary Periods.'})
       });
     }
 
@@ -84,8 +85,6 @@ module.exports.numismatics = (event, context, callback) => {
 
   const pageSize = Number(queryParams.size) || DEFAULT_PAGE_SIZE;
 
-  let lastEvaluatedKey;
-
   const params = {
     TableName: 'Numismatics',
     IndexName: 'NumismaticsDefaultIndex',
@@ -99,13 +98,8 @@ module.exports.numismatics = (event, context, callback) => {
     Limit: pageSize
   };
 
-  if (queryParams.periodId && queryParams.coinId && queryParams.issueDate && queryParams.rate) {
-    params.ExclusiveStartKey = {
-      'periodId': queryParams.periodId,
-      'coinId': queryParams.coinId,
-      'issueDate': Number(queryParams.issueDate),
-      'rate': Number(queryParams.rate)
-    };
+  if (event.headers && event.headers[LAST_EVALUATED_KEY_HEADER_NAME]) {
+    params.ExclusiveStartKey = JSON.parse(event.headers[LAST_EVALUATED_KEY_HEADER_NAME]);
   }
 
   docClient.scan(params, (error, result) => {
@@ -114,21 +108,18 @@ module.exports.numismatics = (event, context, callback) => {
       console.error(error);
       return callback(null, {
         statusCode: error.statusCode || 500,
-        headers: { 'Content-Type': 'text/plain' },
-        body: 'Could not fetch Numismatics Coins.'
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({'message': 'Could not fetch Numismatics Coins.'})
       });
     }
 
-    const body = {
-      'content': result.Items,
-      'lastEvaluatedKey': result.LastEvaluatedKey
-    };
-
-    console.log('Result: ' + result);
     const response = {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-Last-Evaluated-Key': JSON.stringify(result.LastEvaluatedKey)
+      },
+      body: JSON.stringify(result.Items)
     }
     callback(null, response);
   });
