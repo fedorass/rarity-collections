@@ -96,6 +96,8 @@ module.exports.numismatics = (event, context, callback) => {
 
   const pageSize = Number(queryParams.pageSize) || DEFAULT_PAGE_SIZE;
 
+  let filters = [];
+
   const params = {
     TableName: 'Numismatics',
     KeyConditionExpression: '#periodId = :periodId',
@@ -104,9 +106,25 @@ module.exports.numismatics = (event, context, callback) => {
     },
     ExpressionAttributeValues: {
         ':periodId': event.pathParameters.id
-    },
-    Limit: pageSize
+    }
+    //Limit: pageSize
   };
+
+  if (queryParams.metal) {
+    filters.push('#metal = :metal');
+    params.ExpressionAttributeNames['#metal'] = 'metal';
+    params.ExpressionAttributeValues[':metal'] = queryParams.metal;
+  }
+
+  if (queryParams.denomination) {
+    filters.push('#denomination = :denomination');
+    params.ExpressionAttributeNames['#denomination'] = 'denomination';
+    params.ExpressionAttributeValues[':denomination'] = queryParams.denomination;
+  }
+
+  if (filters.length > 0) {
+    params.FilterExpression = filters.join(' and ');
+  }
 
   if (event.headers && event.headers[LAST_EVALUATED_KEY_HEADER_NAME]) {
     params.ExclusiveStartKey = JSON.parse(event.headers[LAST_EVALUATED_KEY_HEADER_NAME]);

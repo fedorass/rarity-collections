@@ -64,7 +64,8 @@ export class NumismaticsComponent implements OnInit {
     
     this.selectedDenomination = denomination;
     if (this.selectedDenomination) {
-      this.pageNumber = 1;
+      this.pageNumber = 0;
+      this.lastEvaluatedKeys = [{}];
     }
     this.triggerFilterRequest();
   }
@@ -73,7 +74,8 @@ export class NumismaticsComponent implements OnInit {
 
     this.selectedMaterial = material;
     if (this.selectedMaterial) {
-      this.pageNumber = 1;
+      this.pageNumber = 0;
+      this.lastEvaluatedKeys = [{}];
     }
     this.triggerFilterRequest();
   }
