@@ -23,6 +23,7 @@ import { NumismaticsService } from './content/numismatics.service';
 import { FilterComponent } from './content/filter/filter.component';
 import { PaginationComponent } from './content/pagination/pagination.component';
 
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PaginationComponent } from './content/pagination/pagination.component';
     NavigationComponent,
     CoinComponent,
     FilterComponent,
-    PaginationComponent
+    PaginationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
