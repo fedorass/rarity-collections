@@ -3,28 +3,34 @@ import { Router } from "@angular/router";
 
 import { Observable } from 'rxjs';
 
+import { AuthService, GoogleLoginProvider, SocialUser } from "angularx-social-login";
+
 @Injectable()
 export class SocialAuthService {
 
   private loggedIn: boolean;
+  private user: SocialUser;
 
-  private userDetails: any = {
-    displayName: 'Alexandr Fedoras',
-    email: 'oleksandr.fedoras@gmail.com'
-  };
-
-  constructor(private router: Router) { 
+  constructor(private authService: AuthService, private router: Router) { 
     this.loggedIn = false;
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
 
   signIn(): void {
-    this.loggedIn = true;
-    this.router.navigate(['/numismatics'])
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(result => {
+      this.loggedIn = true;
+      this.router.navigate(['/numismatics'])
+    } );
   }
 
   signOut() {
-    this.loggedIn = false;
-    this.router.navigate(['/login'])
+    this.authService.signOut().then(result => {
+      this.loggedIn = false;
+      this.router.navigate(['/login'])
+    });
   }
 
   isLoggedIn(): boolean {
@@ -32,11 +38,11 @@ export class SocialAuthService {
   }
 
   getDisplayName(): string {
-    return this.userDetails.displayName;
+    return this.user.name;
   }
 
   getEmail(): string {
-    return this.userDetails.email;
+    return this.user.email;
   }
 
 }

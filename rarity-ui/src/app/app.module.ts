@@ -30,6 +30,21 @@ import { NumismaticsService } from './content/numismatics.service';
 import { SocialAuthService } from './social-auth.service';
 import { AuthGuard } from './auth.guard';
 
+import { environment } from '../environments/environment';
+
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angularx-social-login";
+
+export function provideConfig() {
+
+  return new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider(environment.googleClientId)
+    }
+  ]);
+
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +63,7 @@ import { AuthGuard } from './auth.guard';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    SocialLoginModule,
     MDBBootstrapModulesPro.forRoot()
   ],
   providers: [
@@ -57,6 +73,10 @@ import { AuthGuard } from './auth.guard';
     NumismaticsService,
     {
       provide: 'API_ENDPOINT', useValue: 'https://vqmfad9j56.execute-api.eu-central-1.amazonaws.com/dev/api' //dev 'http://localhost:3000/api'
+    },
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
     },
     SocialAuthService,
     CountriesResolver,
