@@ -5,10 +5,15 @@ import { LoginComponent } from './login/login.component';
 
 import { NumismaticsComponent } from './content/numismatics/numismatics.component';
 
+import { CountriesResolver } from './content/numismatics/countries.resolver';
+
 const routes: Routes = [
   {
     path: 'numismatics',
-    component: NumismaticsComponent
+    component: NumismaticsComponent,
+    resolve: {
+      countries: CountriesResolver
+    }
   },
   {
     path: 'login',

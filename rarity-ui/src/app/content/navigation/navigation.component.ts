@@ -1,9 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
-import { CountryService } from '../country.service';
 import { MonetaryPeriodService } from '../monetary-period.service';
-
-const DEFAULT_USER_ID = 'ce06f1b5-9d40-49fc-b61f-16b1ca006a30'; //'oleksandr.fedoras@gmail.com'
 
 @Component({
   selector: 'grid-navigation',
@@ -15,6 +12,7 @@ const DEFAULT_USER_ID = 'ce06f1b5-9d40-49fc-b61f-16b1ca006a30'; //'oleksandr.fed
 })
 export class NavigationComponent implements OnInit {
 
+  @Input()
   countries: Array<any>;
 
   monetaryPeriods: Array<any>;
@@ -25,23 +23,10 @@ export class NavigationComponent implements OnInit {
 
   @Output() onNavChanged = new EventEmitter<any>();
 
-  constructor(private countryService: CountryService, private monetaryPeriodService: MonetaryPeriodService) { 
-
+  constructor( private monetaryPeriodService: MonetaryPeriodService) { 
   }
 
   ngOnInit() {
-
-    this.countryService.findAll(DEFAULT_USER_ID)
-      .subscribe(countries => {
-        this.countries = [];
-        this.countries = countries.map(country => {
-          return {
-            value: country.countryId, 
-            label: country.name,
-            materials: country.materials
-          }
-        })
-      });
   }
 
   countryChanged(country): void {

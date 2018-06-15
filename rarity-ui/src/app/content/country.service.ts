@@ -1,14 +1,14 @@
 import { Injectable, Inject } from '@angular/core';
 
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
 export class CountryService {
 
-  constructor(private http: Http, @Inject('API_ENDPOINT') private baseUrl: string) {
+  constructor(private http: HttpClient, @Inject('API_ENDPOINT') private baseUrl: string) {
 
    }
 
@@ -16,11 +16,7 @@ export class CountryService {
 
     const queryUrl = `${this.baseUrl}/users/${userId}/countries`;
 
-    return this.http.get(queryUrl).map((response: Response) => {
-      return (<any>response.json()).map(item => {
-        return item;
-      });
-    });
+    return this.http.get<any[]>(queryUrl);
    }
 
 }

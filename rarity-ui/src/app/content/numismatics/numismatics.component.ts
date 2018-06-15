@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { NumismaticsService } from '../numismatics.service';
 
@@ -17,6 +18,8 @@ export class NumismaticsComponent implements OnInit {
   @ViewChild('coinsView') 
   coinsView: ElementRef;
 
+  countries: Array<any> = [];
+
   materialFilters: Array<any> = [];
   denominationFilters: Array<any> = [];  
 
@@ -32,9 +35,10 @@ export class NumismaticsComponent implements OnInit {
 
   pageNumber: number = 0;
 
-  constructor(private numismaticsService: NumismaticsService) { }
+  constructor(private numismaticsService: NumismaticsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.countries = this.route.snapshot.data.countries;
   }
 
   onNavChanged(filters: any): void {
