@@ -6,11 +6,13 @@ import { LoginComponent } from './login/login.component';
 import { NumismaticsComponent } from './content/numismatics/numismatics.component';
 
 import { CountriesResolver } from './content/numismatics/countries.resolver';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
     path: 'numismatics',
     component: NumismaticsComponent,
+    canActivate: [AuthGuard],
     resolve: {
       countries: CountriesResolver
     }

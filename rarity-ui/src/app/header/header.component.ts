@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SocialAuthService } from '../social-auth.service';
+
 @Component({
   selector: 'ui-header',
   templateUrl: './header.component.html',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: SocialAuthService) { }
 
   ngOnInit() {
+  }
+
+  signIn(): void {
+    this.authService.signIn();
+  }
+
+  signOut(): void {
+    this.authService.signOut();
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
   }
 
 }

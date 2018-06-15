@@ -27,6 +27,9 @@ import { CountriesResolver } from './content/numismatics/countries.resolver';
 import { MonetaryPeriodService } from './content/monetary-period.service';
 import { NumismaticsService } from './content/numismatics.service';
 
+import { SocialAuthService } from './social-auth.service';
+import { AuthGuard } from './auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +58,9 @@ import { NumismaticsService } from './content/numismatics.service';
     {
       provide: 'API_ENDPOINT', useValue: 'https://vqmfad9j56.execute-api.eu-central-1.amazonaws.com/dev/api' //dev 'http://localhost:3000/api'
     },
-    CountriesResolver
+    SocialAuthService,
+    CountriesResolver,
+    AuthGuard
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent]
