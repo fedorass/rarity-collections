@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
-import { MDBSpinningPreloader } from 'ng-mdb-pro';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
+import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
 
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {  HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,14 +17,33 @@ import { FooterComponent } from './footer/footer.component';
 import { NumismaticsComponent } from './content/numismatics/numismatics.component';
 import { NavigationComponent } from './content/navigation/navigation.component';
 import { CoinComponent } from './content/coin/coin.component';
-
-import { CountryService } from './content/country.service';
-import { MonetaryPeriodService } from './content/monetary-period.service';
-import { NumismaticsService } from './content/numismatics.service';
 import { FilterComponent } from './content/filter/filter.component';
 import { PaginationComponent } from './content/pagination/pagination.component';
 
 import { LoginComponent } from './login/login.component';
+
+import { CountryService } from './content/country.service';
+import { CountriesResolver } from './content/numismatics/countries.resolver';
+import { MonetaryPeriodService } from './content/monetary-period.service';
+import { NumismaticsService } from './content/numismatics.service';
+
+import { SocialAuthService } from './social-auth.service';
+import { AuthGuard } from './auth.guard';
+
+import { environment } from '../environments/environment';
+
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angularx-social-login";
+
+export function provideConfig() {
+
+  return new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider(environment.googleClientId)
+    }
+  ]);
+
+}
 
 @NgModule({
   declarations: [
@@ -39,10 +59,12 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
-    MDBBootstrapModules.forRoot()
+    HttpClientModule,
+    SocialLoginModule,
+    MDBBootstrapModulesPro.forRoot()
   ],
   providers: [
     MDBSpinningPreloader,
@@ -51,7 +73,14 @@ import { LoginComponent } from './login/login.component';
     NumismaticsService,
     {
       provide: 'API_ENDPOINT', useValue: 'https://vqmfad9j56.execute-api.eu-central-1.amazonaws.com/dev/api' //dev 'http://localhost:3000/api'
-    }
+    },
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    },
+    SocialAuthService,
+    CountriesResolver,
+    AuthGuard
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent]

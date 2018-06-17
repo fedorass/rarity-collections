@@ -74,18 +74,26 @@
 
         <navlinks>
             <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ie-hidden-double-nav">
-                <li class="nav-item">
-                    <a class="nav-link waves-light" mdbWavesEffect>
-                        <i class="fa fa-user"></i>
-                        <span class="clearfix d-none d-sm-inline-block">oleksandr.fedoras@gmail.com</span>
-                    </a>
+                <li class="nav-item" *ngIf="isLoggedIn(); else notLoggedIn">
+                        <a class="nav-link waves-light" mdbWavesEffect>
+                            <i class="fa fa-sign-out"></i>
+                            <span class="clearfix d-none d-sm-inline-block" (click)="signOut()">Sign Out</span>
+                        </a>
                 </li>
+                <ng-template #notLoggedIn>
+                <li class="nav-item">
+                        <a class="nav-link waves-light" mdbWavesEffect>
+                            <i class="fa fa-google-plus"></i>
+                            <span class="clearfix d-none d-sm-inline-block" (click)="signIn()">Sign In</span>
+                        </a>
+                </li>
+                </ng-template>
             </ul>
         </navlinks>
     </mdb-navbar>
   </header>
 
-  <div class="fixed-action-btn" style="bottom: 55px; right: 24px;">
+  <div class="fixed-action-btn" style="bottom: 55px; right: 24px;" *ngIf="isLoggedIn()">
         <a class="btn-floating btn-lg aqua-gradient waves-light" mdbWavesEffect (click)="fixed.toggle($event)">
             <i class="fa fa-gears"></i>
         </a>

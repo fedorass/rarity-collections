@@ -14,7 +14,7 @@ export class FilterComponent implements OnInit, OnChanges {
   @Input() name: string;
   @Input() values: Array<any>;
 
-  selected: string = '';
+  selected: string;
 
   @Output() onFilterChanged = new EventEmitter<any>();
 
