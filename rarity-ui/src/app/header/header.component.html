@@ -73,19 +73,34 @@
         </logo>
 
         <navlinks>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ie-hidden-double-nav">
-                <li class="nav-item" *ngIf="isLoggedIn(); else notLoggedIn">
-                        <a class="nav-link waves-light" mdbWavesEffect>
-                            <i class="fa fa-sign-out"></i>
-                            <span class="clearfix d-none d-sm-inline-block" (click)="signOut()">Sign Out</span>
-                        </a>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <div *ngIf="isLoggedIn(); else notLoggedIn">
+                <li class="nav-item dropdown btn-group" dropdown style="width: 150px">
+                    <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                        <i class="fa fa-sheqel"></i> Collection
+                    </a>
+
+                    <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">                      
+                        <a class="border-left border-info border-3 dropdown-item">Own</a>
+                        <h6 class="dropdown-header" style="padding-left: 0px">Public/Shared</h6>
+                    </div>
                 </li>
+                <li class="nav-item dropdown btn-group" dropdown>
+                    <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                        <i class="fa fa-user-circle-o"></i> {{ getUserName() }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+                        <div class="divider dropdown-divider"></div>
+                        <a class="dropdown-item" (click)="signOut()"><i class="fa fa-sign-out"></i> Sign Out</a>
+                    </div>
+                </li>
+                </div>
                 <ng-template #notLoggedIn>
                 <li class="nav-item">
-                        <a class="nav-link waves-light" mdbWavesEffect>
-                            <i class="fa fa-google-plus"></i>
-                            <span class="clearfix d-none d-sm-inline-block" (click)="signIn()">Sign In</span>
-                        </a>
+                    <a type="button" class="nav-link waves-light" mdbWavesEffect>
+                        <i class="fa fa-google-plus"></i> <span class="clearfix d-none d-sm-inline-block" (click)="signIn()">Sign In</span>
+                    </a>
                 </li>
                 </ng-template>
             </ul>

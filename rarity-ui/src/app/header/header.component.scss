@@ -1,3 +1,19 @@
 :host {
     flex: 0 0 75px; 
 }
+
+.navbar-nav {
+    .nav-item {
+        .dropdown-menu {
+            top: -25px !important;
+        }
+    }
+}
+
+.dropdown-divider {
+    width: 100%;    
+}
+
+.border-3 {
+    border-width:3px !important;
+}

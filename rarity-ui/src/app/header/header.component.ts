@@ -22,6 +22,10 @@ export class HeaderComponent implements OnInit {
     this.authService.signOut();
   }
 
+  getUserName(): string {
+    return this.authService.getDisplayName();
+  }
+
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
