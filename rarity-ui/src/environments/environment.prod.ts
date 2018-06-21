@@ -1,4 +1,11 @@
 export const environment = {
-  production: true,
-  googleClientId: '994189707965-ko605tqu1ukf13ji0knj0kj88hc5scbb.apps.googleusercontent.com'
+  production: true,  
+  firebase: {
+    apiKey: "AIzaSyDXQc-TyKBE3x_fraxqxpLnbBLakwkISI8",
+    authDomain: "rarity-collection.firebaseapp.com",
+    databaseURL: "https://rarity-collection.firebaseio.com",
+    projectId: "rarity-collection",
+    storageBucket: "rarity-collection.appspot.com",
+    messagingSenderId: "235485876481"
+  }
 };

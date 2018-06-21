@@ -32,18 +32,9 @@ import { AuthGuard } from './auth.guard';
 
 import { environment } from '../environments/environment';
 
-import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angularx-social-login";
-
-export function provideConfig() {
-
-  return new AuthServiceConfig([
-    {
-      id: GoogleLoginProvider.PROVIDER_ID,
-      provider: new GoogleLoginProvider(environment.googleClientId)
-    }
-  ]);
-
-}
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -63,7 +54,9 @@ export function provideConfig() {
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SocialLoginModule,
+    AngularFireModule.initializeApp(environment.firebase, 'rarity-collection'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     MDBBootstrapModulesPro.forRoot()
   ],
   providers: [
@@ -73,10 +66,6 @@ export function provideConfig() {
     NumismaticsService,
     {
       provide: 'API_ENDPOINT', useValue: 'https://vqmfad9j56.execute-api.eu-central-1.amazonaws.com/dev/api' //dev 'http://localhost:3000/api'
-    },
-    {
-      provide: AuthServiceConfig,
-      useFactory: provideConfig
     },
     SocialAuthService,
     CountriesResolver,
