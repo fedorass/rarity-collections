@@ -10,6 +10,7 @@ provider:
     COUNTRIES_DYNAMODB_TABLE: 'Countries'
     MONETARY_PERIOD_DYNAMODB_TABLE: 'MonetaryPeriod'
     NUMISMATICS_DYNAMODB_TABLE: 'Numismatics'
+    SHARED_COLLECTIONS_TABLE: 'SharedCollections'
 
   iamRoleStatements:
     - Effect: Allow
@@ -23,7 +24,8 @@ provider:
       Resource: [
         "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.COUNTRIES_DYNAMODB_TABLE}",
         "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.MONETARY_PERIOD_DYNAMODB_TABLE}",
-        "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.NUMISMATICS_DYNAMODB_TABLE}"
+        "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.NUMISMATICS_DYNAMODB_TABLE}",
+        "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.SHARED_COLLECTIONS_TABLE}"
       ]
     - Effect: Allow
       Action:
@@ -36,28 +38,35 @@ provider:
       ]
 
 functions:
-  findAllCountries:
+  getSharedCollections:
+    handler: api.shared
+    events:
+      - http:
+          path: api/shared/{id}
+          method: get
+          cors: true
+  getAllCountries:
     handler: api.countries
     events:
       - http:
           path: api/users/{id}/countries
           method: get
           cors: true
-#  findOneCountry:
+#  getOneCountry:
 #    handler: countries.one
 #    events:
 #      - http:
 #          path: api/countries/{id}
 #          method: get
 #          cors: true
-  findCountryMonetaryPeriods:
+  getCountryMonetaryPeriods:
     handler: api.periods
     events:
       - http:
           path: api/countries/{id}/periods
           method: get
           cors: true
-  findNumismaticsCoins:
+  getNumismaticsCoins:
     handler: api.numismatics
     events:
       - http:
@@ -193,6 +202,29 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.NUMISMATICS_DYNAMODB_TABLE}
+
+    SharedCollectionsDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: ownerId
+            AttributeType: S
+          -
+            AttributeName: userId
+            AttributeType: S             
+        KeySchema:
+          -
+            AttributeName: ownerId
+            KeyType: HASH
+          -
+            AttributeName: userId
+            KeyType: RANGE   
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.SHARED_COLLECTIONS_TABLE}
 
 custom:
   dynamodb:

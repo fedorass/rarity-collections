@@ -7,9 +7,48 @@ var docClient = new AWS.DynamoDB.DocumentClient({
   region: 'eu-central-1'
 });
 
-
 const DEFAULT_PAGE_SIZE = 12;
 const LAST_EVALUATED_KEY_HEADER_NAME = 'x-last-evaluated-key';
+
+
+module.exports.shared = (event, context, callback) => {
+  const params = {
+    TableName : 'SharedCollections',
+    KeyConditionExpression: '#ownerId = :ownerId',
+    ExpressionAttributeNames:{
+        '#ownerId': 'ownerId'
+    },
+    ExpressionAttributeValues: {
+        ':ownerId': event.pathParameters.id
+    }
+  };
+
+  docClient.query(params, (error, result) => {
+
+    if (error) {
+      console.error(error);
+      return callback(null, {
+        statusCode: error.statusCode || 500,
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+         },
+        body: JSON.stringify({'message': 'Could not fetch Shared Collections.'})
+      });
+    }
+
+    const response = {
+      statusCode: 200,
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*' 
+      },
+      body: JSON.stringify(result.Items)
+    }
+    callback(null, response);
+  });
+};
+
 
 module.exports.countries = (event, context, callback) => {
   
