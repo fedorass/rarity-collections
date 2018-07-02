@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { CountryService } from '../country.service';
 import { NumismaticsService } from '../numismatics.service';
+
+import { CurrentSession } from '../../session.service';
 
 const LAST_EVALUATED_KEY_HEADER_NAME = 'X-Last-Evaluated-Key';
 const DEFAULT_PAGE_SIZE = 12;
@@ -35,10 +38,32 @@ export class NumismaticsComponent implements OnInit {
 
   pageNumber: number = 0;
 
-  constructor(private numismaticsService: NumismaticsService, private route: ActivatedRoute) { }
+  constructor(private numismaticsService: NumismaticsService, private countryService: CountryService, private currentSession: CurrentSession, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.countries = this.route.snapshot.data.countries;
+    let publicCollections = this.route.snapshot.data.publicCollections;
+    this.currentSession.setSharedCollections(publicCollections);
+    this.currentSession.getSharedCollection().subscribe(currentCollection => {
+
+      let email = (currentCollection)? currentCollection : this.currentSession.getEmail();
+
+      this.countryService.findAll(email).subscribe(countries => {
+        this.countries = countries.map(country => {
+          return {
+              value: country.countryId, 
+              label: country.name,
+              materials: country.materials
+            }
+        });
+
+        this.onNavChanged({
+          materialFilters: [],
+          denominationFilters: []
+        });
+
+      });
+    });
   }
 
   onNavChanged(filters: any): void {

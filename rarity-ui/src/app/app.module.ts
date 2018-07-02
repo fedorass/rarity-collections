@@ -26,6 +26,8 @@ import { CountryService } from './content/country.service';
 import { CountriesResolver } from './content/numismatics/countries.resolver';
 import { MonetaryPeriodService } from './content/monetary-period.service';
 import { NumismaticsService } from './content/numismatics.service';
+import { SharedCollectionService } from './content/shared.service';
+import { PublicCollectionsResolver } from "./content/numismatics/public-collections.resolver";
 
 import { SocialAuthService } from './social-auth.service';
 import { AuthGuard } from './auth.guard';
@@ -71,6 +73,7 @@ export function provideConfig() {
     CountryService,
     MonetaryPeriodService,
     NumismaticsService,
+    SharedCollectionService,
     {
       provide: 'API_ENDPOINT', useValue: 'https://vqmfad9j56.execute-api.eu-central-1.amazonaws.com/dev/api' //dev 'http://localhost:3000/api'
     },
@@ -80,6 +83,7 @@ export function provideConfig() {
     },
     SocialAuthService,
     CountriesResolver,
+    PublicCollectionsResolver,
     AuthGuard
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

@@ -1,48 +1,44 @@
 import { Injectable } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
 import { AuthService, GoogleLoginProvider, SocialUser } from "angularx-social-login";
 
+import { CurrentSession } from './session.service';
+
 @Injectable()
 export class SocialAuthService {
 
-  private loggedIn: boolean;
-  private user: SocialUser;
+  constructor(private authService: AuthService, private currentSession: CurrentSession, private router: Router) { 
 
-  constructor(private authService: AuthService, private router: Router) { 
-    this.loggedIn = false;
     this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
+      if (user != null) {
+        this.currentSession.setLoggedIn(true);
+        this.currentSession.setDisplayName(user.name);
+        this.currentSession.setEmail(user.email);
+      }
+      else {
+        this.currentSession.setLoggedIn(false);
+      }
     });
   }
 
   signIn(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(result => {
-      this.loggedIn = true;
-      this.router.navigate(['/numismatics'])
-    } );
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((result) => {
+
+      this.router.navigate(['/numismatics']);
+      },
+      (error) => {
+        console.error('Error: ' + JSON.stringify(error));
+      }
+    );
   }
 
   signOut() {
     this.authService.signOut().then(result => {
-      this.loggedIn = false;
-      this.router.navigate(['/login'])
+      this.currentSession.setLoggedIn(false);
+      this.router.navigate(['/login']);
     });
   }
-
-  isLoggedIn(): boolean {
-    return this.loggedIn;
-  }
-
-  getDisplayName(): string {
-    return this.user.name;
-  }
-
-  getEmail(): string {
-    return this.user.email;
-  }
-
 }

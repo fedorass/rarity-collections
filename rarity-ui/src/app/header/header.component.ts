@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SocialAuthService } from '../social-auth.service';
+import { CurrentSession } from '../session.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'ui-header',
@@ -9,9 +11,19 @@ import { SocialAuthService } from '../social-auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService: SocialAuthService) { }
+  publicCollections: Array<any> = [];
+  currentCollection: string;
+
+  constructor(private authService: SocialAuthService, private currentSession: CurrentSession, private messageService: MessageService) { }
 
   ngOnInit() {
+    this.currentSession.getSharedCollections().subscribe(publicCollections => {
+      this.publicCollections = publicCollections;
+    });
+
+    this.currentSession.getSharedCollection().subscribe(currentCollection => {
+      this.currentCollection = currentCollection;
+    });
   }
 
   signIn(): void {
@@ -23,11 +35,19 @@ export class HeaderComponent implements OnInit {
   }
 
   getUserName(): string {
-    return this.authService.getDisplayName();
+    return this.currentSession.getDisplayName();
   }
 
   isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
+    return this.currentSession.isLoggedIn();
+  }
+
+  setSharedCollection(sharedCollection?: string): void {
+    this.currentSession.setSharedCollection(sharedCollection);
+  }
+
+  getSharedCollection(): string {
+      return this.currentCollection;
   }
 
 }

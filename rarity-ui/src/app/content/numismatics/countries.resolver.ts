@@ -15,7 +15,7 @@ export class CountriesResolver implements Resolve<Observable<any[]>> {
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any[]> {
 
-        let email =  this.currentSession.getSharedCollection() ? this.currentSession.getSharedCollection() : this.currentSession.getEmail();
+        let email =  this.currentSession.getEmail();
         return this.countryService.findAll(email).pipe(
             map(countries => {
                 return countries.map(country => {

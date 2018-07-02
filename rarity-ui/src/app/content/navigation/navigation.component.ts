@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 
 import { MonetaryPeriodService } from '../monetary-period.service';
 
@@ -10,7 +10,7 @@ import { MonetaryPeriodService } from '../monetary-period.service';
     'class': 'row'
   }
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, OnChanges {
 
   @Input()
   countries: Array<any>;
@@ -27,6 +27,13 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.monetaryPeriods = [];
+    this.isPeriodsDisabled = true;
+    this.selectedCountry = null;
+    this.selectedMonetaryPeriod = null;
   }
 
   countryChanged(country): void {

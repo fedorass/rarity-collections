@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { NumismaticsComponent } from './content/numismatics/numismatics.component';
 
 import { CountriesResolver } from './content/numismatics/countries.resolver';
+import { PublicCollectionsResolver } from './content/numismatics/public-collections.resolver';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
     component: NumismaticsComponent,
     canActivate: [AuthGuard],
     resolve: {
-      countries: CountriesResolver
+      countries: CountriesResolver,
+      publicCollections: PublicCollectionsResolver
     }
   },
   {
