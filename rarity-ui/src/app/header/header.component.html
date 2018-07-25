@@ -81,7 +81,7 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">                      
-                        <a class="border-info  dropdown-item" [ngClass]="{'border-left border-3': !getSharedCollection()}" (click)="setSharedCollection()">Own</a>
+                        <a class="border-info dropdown-item" [ngClass]="{'border-left border-3': !getSharedCollection()}" (click)="setSharedCollection()">Own</a>
                         <h6 class="dropdown-header" style="padding-left: 0px">Public/Shared</h6>
                         <a class="border-info dropdown-item" *ngFor="let publicCollection of publicCollections" [ngClass]="{'border-left border-3': (getSharedCollection() === publicCollection)}" (click)="setSharedCollection(publicCollection)">{{ publicCollection }}</a>
                     </div>

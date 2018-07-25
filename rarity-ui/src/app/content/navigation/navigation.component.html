@@ -1,8 +1,24 @@
-<div class="col-md-3 mt-3">
+<div class="col-md-4 mt-3">
     <mdb-select [options]="countries" [disabled]="!countries || countries.length === 0" (selected)="countryChanged($event)" placeholder="Choose country" class="colorful-select dropdown-primary"></mdb-select>
     <label>Country</label>
 </div>
-<div class="col-md-3 mt-3">
+<div class="col-md-4 mt-3">
     <mdb-select [options]="monetaryPeriods" [disabled]="isPeriodsDisabled" (selected)="monetaryPeriodChanged($event)" placeholder="Choose monetary period" class="colorful-select dropdown-primary"></mdb-select>
     <label>Monetary period</label>
+</div>
+<div class="col-md-4 mt-3">
+    <div class="btn-group float-right" dropdown>
+        <button dropdownToggle type="button" class="btn btn-flat btn-sm" mdbWavesEffect>
+            <i class="fa fa-ellipsis-v fa-2x light-blue-text" aria-hidden="true"></i>
+        </button>
+    
+        <div class="dropdown-menu dropdown-primary" role="menu">
+            <h6 class="dropdown-header" style="padding-left: 0px">Country</h6>
+            <a class="dropdown-item">Create a country</a>
+            <h6 class="dropdown-header" style="padding-left: 0px">Monetary period</h6>
+            <a class="dropdown-item disabled" href="#">Create a monetary period</a>
+            <h6 class="dropdown-header" style="padding-left: 0px">Coin</h6>
+            <a class="dropdown-item disabled" href="#">Create a coin</a>
+        </div>
+    </div>
 </div>
